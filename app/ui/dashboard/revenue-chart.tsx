@@ -1,19 +1,22 @@
 import { generateYAxis } from '@/app/lib/utils';
 import { CalendarIcon } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
-import { Revenue } from '@/app/lib/definitions';
+import { fetchRevenue } from '@/app/lib/data';
 
+interface Revenue {
+  month: string;
+  revenue: number;
+}
 
+export default async function RevenueChart() {
+  const revenue = await fetchRevenue();  // fetchRevenue returns a list of Revenue type
 
-export default async function RevenueChart({
-  revenue,
-}: {
-  revenue: Revenue[];
-}) {
   const chartHeight = 350;
 
+  // Generate Y-axis labels based on revenue data
   const { yAxisLabels, topLabel } = generateYAxis(revenue);
 
+  // If no revenue data is available
   if (!revenue || revenue.length === 0) {
     return <p className="mt-4 text-gray-400">No data available.</p>;
   }
@@ -29,8 +32,8 @@ export default async function RevenueChart({
             className="mb-6 hidden flex-col justify-between text-sm text-gray-400 sm:flex"
             style={{ height: `${chartHeight}px` }}
           >
-            {yAxisLabels.map((label) => (
-              <p key={label}>{label}</p>
+            {yAxisLabels.map((label, index) => (
+              <p key={index}>{label}</p>  // Added a key for better React rendering
             ))}
           </div>
 

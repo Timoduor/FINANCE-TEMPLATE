@@ -5,36 +5,56 @@
     "dev": "next dev --turbo",
     "start": "next start"
   },
+  "type": "module",
   "dependencies": {
-    "@heroicons/react": "^2.1.4",
+    "@heroicons/react": "^2.2.0",
     "@neondatabase/serverless": "^0.10.4",
-    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/forms": "^0.5.9",
     "@vercel/postgres": "^0.8.0",
     "autoprefixer": "10.4.19",
     "bcrypt": "^5.1.1",
+    "browserslist": "^4.24.3",
     "clsx": "^2.1.1",
-    "dotenv": "^16.4.5",
-    "next": "^15.0.3",
+    "dotenv": "^16.4.7",
+    "next": "^15.1.0",
     "next-auth": "5.0.0-beta.19",
     "pg": "^8.13.1",
     "postcss": "8.4.38",
+    "postcss-selector-parser": "^7.0.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "tailwindcss": "3.4.4",
-    "typescript": "5.5.2",
-    "use-debounce": "^10.0.1",
-    "zod": "^3.23.8"
+    "update-browserslist-db": "^1.1.1",
+    "use-debounce": "^10.0.4",
+    "webpack": "5.72.1",
+    "yaml": "^2.6.1",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/node": "20.14.8",
     "@types/react": "npm:types-react@19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+    "typescript": "5.5.2"
   },
   "pnpm": {
     "overrides": {
       "@types/react": "npm:types-react@19.0.0-rc.1",
       "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
     }
+  },
+  "browserslist": {
+    "production": [
+      "chrome 64",
+      "edge 79",
+      "firefox 67",
+      "opera 51",
+      "safari 12"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
